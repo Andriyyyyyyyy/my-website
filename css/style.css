@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 50px); /* Висота сторінки мінус хедер */
+    overflow-y: auto;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column; /* Змінюємо напрямок на вертикальний */
+    background-color: #444;
+    width: 200px;
+    height: 100%; /* Висота на весь екран */
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #555;
+    border-radius: 5px;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #666;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.submenu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.submenu div {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.menu {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+}
+
+.menu h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.menu button:hover {
+    background-color: #0056b3;
+}
+
+.gallery {
+    flex: 3;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.gallery h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.gallery img {
+ width: 100%; /* Зображення займає всю ширину контейнера */
+    max-width: 200px; /* Максимальна ширина зображення */
+    height: auto; /* Зберігає пропорції */
+    border-radius: 5px; /* Злегка закруглені кути */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тінь для зображень */
+    margin: 5px; /* Відступ між зображеннями */
+}
+
+@media (max-width: 768px) {
+    .gallery img {
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        max-width: 100%;
+    }
+}
