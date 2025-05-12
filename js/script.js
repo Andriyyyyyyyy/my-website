@@ -55,7 +55,17 @@ function initialize(data) {
             const img = document.createElement('img');
             img.src = data[imageKey];
             img.alt = `${brand} ${model} ${year}`;
-            gallery.appendChild(img);
+            img.style.objectFit = 'cover'; // Забезпечує пропорції 1:1
+            img.style.width = '150px'; // Фіксована ширина
+            img.style.height = '150px'; // Фіксована висота
+
+            // Перевірка, чи зображення завантажується
+            img.onload = () => {
+                gallery.appendChild(img); // Додаємо тільки якщо зображення завантажилося
+            };
+            img.onerror = () => {
+                console.warn(`Image not found: ${data[imageKey]}`); // Лог помилки
+            };
         });
     }
 
